@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{80417799-3DE8-4FEB-9311-AF46A648421B}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>dj3d</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IncludePath>$(IncludePath);C:\cygwin\usr\include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;C:\GnuWin32\include</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>pushd . 
+cd ../../../source/schema 
+bison --defines=y.tab.h dj3d.y -o y.tab.c
+flex dj3d.l
+popd </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>build dj3d parser</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\source\core\blendop.cpp" />
+    <ClCompile Include="..\..\..\source\core\light.cpp" />
+    <ClCompile Include="..\..\..\source\core\material.cpp" />
+    <ClCompile Include="..\..\..\source\core\model.cpp" />
+    <ClCompile Include="..\..\..\source\core\rendermgr.cpp" />
+    <ClCompile Include="..\..\..\source\core\scene.cpp" />
+    <ClCompile Include="..\..\..\source\core\texture2d.cpp" />
+    <ClCompile Include="..\..\..\source\entry\routine.cpp" />
+    <ClCompile Include="..\..\..\source\image\jpegimg.cpp" />
+    <ClCompile Include="..\..\..\source\image\pngimg.cpp" />
+    <ClCompile Include="..\..\..\source\math\3d.cpp" />
+    <ClCompile Include="..\..\..\source\platform\imageloader.cpp" />
+    <ClCompile Include="..\..\..\source\runtime\exception.cpp" />
+    <ClCompile Include="..\..\..\source\schema\dj3d_parser.cpp" />
+    <ClCompile Include="..\..\..\source\utility\utility.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\source\core\blendop.h" />
+    <ClInclude Include="..\..\..\source\core\light.h" />
+    <ClInclude Include="..\..\..\source\core\material.h" />
+    <ClInclude Include="..\..\..\source\core\model.h" />
+    <ClInclude Include="..\..\..\source\core\rendermgr.h" />
+    <ClInclude Include="..\..\..\source\core\scene.h" />
+    <ClInclude Include="..\..\..\source\core\texture2d.h" />
+    <ClInclude Include="..\..\..\source\entry\routine.h" />
+    <ClInclude Include="..\..\..\source\image\jpegimg.h" />
+    <ClInclude Include="..\..\..\source\image\pngimg.h" />
+    <ClInclude Include="..\..\..\source\math\3d.h" />
+    <ClInclude Include="..\..\..\source\platform\dj3d.h" />
+    <ClInclude Include="..\..\..\source\platform\imageloader.h" />
+    <ClInclude Include="..\..\..\source\runtime\exception.h" />
+    <ClInclude Include="..\..\..\source\schema\dj3d_parser.h" />
+    <ClInclude Include="..\..\..\source\utility\utility.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\source\schema\dj3d.l" />
+    <None Include="..\..\..\source\schema\dj3d.y" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,71 @@
+<scene id = 1>
+	<camera fovy = 30.0 zn = 10.0 zf = 250.0>
+		<vertex>0.0, 3.0, 12.0</vertex>
+		<vector>0.0, -3.0, -12.0</vector>
+		<vector>0.0, 1.0, 0.0</vector>
+	</camera>
+	<light id = 0 status = on>
+		<ambient>0.2, 0.2, 0.2, 1.0</ambient>
+		<specular>1.0, 1.0, 1.0, 1.0</specular>
+		<diffuse>1.0, 1.0, 1.0, 1.0</diffuse>
+		<vertex>0.0, 10.0, 1.0</vertex>
+		<vector>1.0, 0.0, 0.0</vector>
+	</light>
+	<texture id=1001>"..\Debug\TangWei.jpg"</texture>
+	<model id=1234 attr=100>
+		<matrix>1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0</matrix>
+		<vertex>-1.0, 1.0, 1.0</vertex>
+		<vertex>1.0, 1.0, 1.0</vertex>
+		<vertex>1.0, 1.0, -1.0</vertex>
+		<vertex>-1.0, 1.0, -1.0</vertex>
+		<vertex>-1.0, -1.0, 1.0</vertex>
+		<vertex>1.0, -1.0, 1.0</vertex>
+		<vertex>1.0, -1.0, -1.0</vertex>
+		<vertex>-1.0, -1.0, -1.0</vertex>
+		<render layer = 0 textid = 1001 op = 1114129>
+			<triangles>
+				<index>0,4,1,1,4,5,1,5,2,2,5,6,3,0,1,3,1,2,0,3,7,0,7,4,5,7,6,4,7,5,2,6,7,2,7,3</index>
+				<textcoord>0.0 , 0.0 , 0.0 , 1.0 , 1.0 , 0.0 , 1.0 , 0.0 , 0.0 , 1.0 , 1.0 , 1.0 , 1.0 , 0.0 , 1.0 , 1.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.0 , 1.0 , 0.0 , 1.0 , 1.0 , 0.0 , 0.0 , 0.0 , 1.0 , 0.0 , 1.0 , 0.0 , 1.0 , 0.0 , 0.0 , 0.0 , 0.0 , 0.0 , 1.0 , 0.0 , 1.0 , 1.0 , 0.0 , 0.0 , 1.0 , 1.0 , 0.0 , 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 0.0 , 1.0 , 0.0 , 1.0 , 1.0 , 1.0 , 1.0 , 1.0 , 0.0 , 0.0 , 0.0 , 1.0 , 1.0 , 1.0 , 0.0 , 0.0 , 1.0 , 1.0 , 1.0 , 0.0</textcoord>
+				<normal>
+					<vector> -1.0 , 1.0 , 1.0 </vector>
+					<vector> -1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , 1.0 </vector>
+					<vector> -1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , 1.0 </vector>
+					<vector> 1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , -1.0 </vector>
+					<vector> 1.0 , 1.0 , -1.0 </vector>
+					<vector> 1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , 1.0 , -1.0 </vector>
+					<vector> -1.0 , 1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , 1.0 </vector>
+					<vector> -1.0 , 1.0 , -1.0 </vector>
+					<vector> 1.0 , 1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , -1.0 </vector>
+					<vector> -1.0 , 1.0 , 1.0 </vector>
+					<vector> -1.0 , 1.0 , -1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , 1.0 , 1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , -1.0 , 1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> 1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , -1.0 , 1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> 1.0 , -1.0 , 1.0 </vector>
+					<vector> 1.0 , 1.0 , -1.0 </vector>
+					<vector> 1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> 1.0 , 1.0 , -1.0 </vector>
+					<vector> -1.0 , -1.0 , -1.0 </vector>
+					<vector> -1.0 , 1.0 , -1.0 </vector>
+				</normal>
+			</triangles>
+		</render>
+	</model>
+</scene>
+
