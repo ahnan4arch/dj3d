@@ -11,13 +11,7 @@
 #include "core/scene.h"
 #include "utility/utility.h"
 #include <Windows.h>
-#if 0
-extern "C"{
-#include <lua.h>
-#include <lauxlib.h>
-#include <lualib.h>
-}
-#endif
+
 typedef dj3d::Matrix _Mat;
 
 class rotateModel
@@ -78,53 +72,11 @@ public:
           return;
       }
 }; 
-#if 0
-dj3d::SimpleMemory32 g_memory(1024 * 1024); // 1M
 
-static void* __lua_alloc( void * ud, void * ptr, size_t osize, size_t nsize )
-{
-	if (0 == nsize)
-	{
-		free(ptr);
-		return NULL;
-	}
-	else
-	{
-		return realloc(ptr, nsize);
-	}
-}
-#endif
 int main( int argc, char * argv[] )
 {
     using namespace std;
-#if 0
-    cout << "init:" << endl;
-    g_memory.dumpAll();
-    cout << "alloc 10" << endl;
-    void * p1 = g_memory.alloc(10);
-	g_memory.dumpAll();
-    cout << "alloc 100" << endl;
-	void * p2 = g_memory.alloc(100);
-	g_memory.dumpAll();
-    cout << "alloc 1000" << endl;
-	void * p3 = g_memory.alloc(1000);
-	g_memory.dumpAll();
-    cout << "free 10" << endl;
-    g_memory.free( p1 ); 
-	g_memory.dumpAll();
-    cout << "free 100" << endl;
-	g_memory.free( p2 );
-	g_memory.dumpAll();
-    cout << "free 1000" << endl;
-	g_memory.free( p3 );
-	g_memory.dumpAll();
 
-   char buffer[256];
-	int error = 0;
-
-	lua_State *L = lua_newstate(__lua_alloc, NULL);
-	luaL_openlibs(L);
-#endif
     dj3d::Routine theApp( argc, argv );
     
     MyTimer _timer;
@@ -135,10 +87,7 @@ int main( int argc, char * argv[] )
     cout << !_m;
     cout << (_m * !_m);
     theApp.run();
-#if 0
-    lua_close(L);
-    L = NULL;
-#endif
+
     return 0;
 }
 

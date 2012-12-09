@@ -349,7 +349,7 @@ namespace dj3d
         if ( GLEW_OK == glewInit() )
         {
             m_routineImpl = new RoutineImpl();        
-            ((RoutineImpl*)m_routineImpl)->loadScene("..\\Debug\\example.xml");
+            ((RoutineImpl*)m_routineImpl)->loadScene("example.xml");
 
             glutTimerFunc( s_minimal_interval, __onTimer, 0 );
         }

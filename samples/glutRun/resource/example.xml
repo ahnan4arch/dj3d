@@ -11,7 +11,7 @@
 		<vertex>0.0, 10.0, 1.0</vertex>
 		<vector>1.0, 0.0, 0.0</vector>
 	</light>
-	<texture id=1001>"..\Debug\TangWei.jpg"</texture>
+	<texture id=1001>"TangWei.jpg"</texture>
 	<model id=1234 attr=100>
 		<matrix>1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0</matrix>
 		<vertex>-1.0, 1.0, 1.0</vertex>
