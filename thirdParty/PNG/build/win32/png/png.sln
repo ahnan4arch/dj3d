@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "png", "png\png.vcxproj", "{6C17ED02-A4EE-48DC-82E5-83F58C2373FF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zlib", "..\..\..\..\ZLIB\build\win32\zlib\zlib\zlib.vcxproj", "{D9DC4FF2-EF30-40C8-B29C-56FEA5810A8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6C17ED02-A4EE-48DC-82E5-83F58C2373FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6C17ED02-A4EE-48DC-82E5-83F58C2373FF}.Debug|Win32.Build.0 = Debug|Win32
+		{6C17ED02-A4EE-48DC-82E5-83F58C2373FF}.Release|Win32.ActiveCfg = Release|Win32
+		{6C17ED02-A4EE-48DC-82E5-83F58C2373FF}.Release|Win32.Build.0 = Release|Win32
+		{D9DC4FF2-EF30-40C8-B29C-56FEA5810A8D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D9DC4FF2-EF30-40C8-B29C-56FEA5810A8D}.Debug|Win32.Build.0 = Debug|Win32
+		{D9DC4FF2-EF30-40C8-B29C-56FEA5810A8D}.Release|Win32.ActiveCfg = Release|Win32
+		{D9DC4FF2-EF30-40C8-B29C-56FEA5810A8D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
