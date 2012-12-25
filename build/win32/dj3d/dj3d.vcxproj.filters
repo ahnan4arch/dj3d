@@ -29,6 +29,9 @@
     <Filter Include="schema">
       <UniqueIdentifier>{f9a932b5-90a6-4a75-b44f-5ce81e616016}</UniqueIdentifier>
     </Filter>
+    <Filter Include="package">
+      <UniqueIdentifier>{cdb32e70-8a56-46f1-baed-f41be8227ab9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\source\runtime\exception.cpp">
@@ -75,6 +78,9 @@
     </ClCompile>
     <ClCompile Include="..\..\..\source\schema\dj3d_parser.cpp">
       <Filter>schema</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\source\package\ZiPackage.cpp">
+      <Filter>package</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\source\schema\dj3d_parser.h">
       <Filter>schema</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\source\package\ZiPackage.h">
+      <Filter>package</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

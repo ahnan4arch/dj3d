@@ -13,55 +13,76 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\lib">
+      <UniqueIdentifier>{5e60d6ee-61cd-47d8-953c-9cf94009a18e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\minizip">
+      <UniqueIdentifier>{baf0c7be-5064-4688-b6b3-8fe6157aa522}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\source\adler32.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\compress.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\crc32.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\deflate.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\gzclose.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\gzlib.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\gzread.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\gzwrite.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\infback.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\inffast.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\inflate.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\inftrees.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\trees.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\source\uncompr.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\lib</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\source\zutil.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\compress.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\crc32.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\deflate.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\gzclose.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\gzlib.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\gzread.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\gzwrite.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\infback.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\inffast.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\inflate.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\inftrees.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\trees.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\uncompr.c">
+      <Filter>Source Files\lib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\minizip\ioapi.c">
+      <Filter>Source Files\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\minizip\iowin32.c">
+      <Filter>Source Files\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\minizip\mztools.c">
+      <Filter>Source Files\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\minizip\unzip.c">
+      <Filter>Source Files\minizip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\source\minizip\zip.c">
+      <Filter>Source Files\minizip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +118,24 @@
     </ClInclude>
     <ClInclude Include="..\..\..\..\source\zutil.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\crypt.h">
+      <Filter>Source Files\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\ioapi.h">
+      <Filter>Source Files\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\iowin32.h">
+      <Filter>Source Files\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\mztools.h">
+      <Filter>Source Files\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\unzip.h">
+      <Filter>Source Files\minizip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\source\minizip\zip.h">
+      <Filter>Source Files\minizip</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
