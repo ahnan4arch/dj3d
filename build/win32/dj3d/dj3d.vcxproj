@@ -40,7 +40,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IncludePath>$(IncludePath);C:\cygwin\usr\include</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/BISON_FLEX/win32/include;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/GnuWin32/include;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -63,9 +63,9 @@
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
-cd ../../../source/schema 
-bison --defines=y.tab.h dj3d.y -o y.tab.c
-flex dj3d.l
+cd ..\..\..\source\schema 
+..\..\thirdParty\GnuWin32\bin\bison.exe --defines=y.tab.h dj3d.y -o y.tab.c
+..\..\thirdParty\GnuWin32\bin\flex.exe dj3d.l
 popd </Command>
     </PreBuildEvent>
     <PreBuildEvent>
@@ -81,7 +81,7 @@ popd </Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/BISON_FLEX/win32/include;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/GnuWin32/include;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -93,9 +93,9 @@ popd </Command>
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
-cd ../../../source/schema 
-bison --defines=y.tab.h dj3d.y -o y.tab.c
-flex dj3d.l
+cd ..\..\..\source\schema 
+..\..\thirdParty\GnuWin32\bin\bison.exe --defines=y.tab.h dj3d.y -o y.tab.c
+..\..\thirdParty\GnuWin32\bin\flex.exe dj3d.l
 popd </Command>
       <Message>build dj3d parser</Message>
     </PreBuildEvent>
