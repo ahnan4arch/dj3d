@@ -343,9 +343,9 @@ namespace dj3d
         glutInitWindowPosition(300, 50);
         glutInitWindowSize(800, 600);
         glutCreateWindow("my glut window");
-        glClearColor(0.0f, 0, 0, 0);
+		glClearColor(0.0f, 0, 0, 0);
         glClearDepth(1.0f);
-
+	
         if ( GLEW_OK == glewInit() )
         {
             m_routineImpl = new RoutineImpl();        
@@ -353,7 +353,7 @@ namespace dj3d
 
             glutTimerFunc( s_minimal_interval, __onTimer, 0 );
         }
-    
+	
         return;
     }
 

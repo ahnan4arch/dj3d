@@ -5,9 +5,17 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -21,7 +29,18 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -32,9 +51,19 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="dj3d.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="dj3d.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="dj3d.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="dj3d.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -42,7 +71,15 @@
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
     <IncludePath>$(IncludePath);C:\cygwin\usr\include</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IncludePath>$(IncludePath);C:\cygwin\usr\include</IncludePath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -52,7 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/BISON_FLEX/win32/include;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -63,9 +100,38 @@
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
-cd ../../../source/schema 
-bison --defines=y.tab.h dj3d.y -o y.tab.c
-flex dj3d.l
+cd $(DJ3D_SRC)/schema 
+set PATH=%PATH%;$(FLEX_BISON_BIN)
+$(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
+$(Flex) dj3d.l
+popd </Command>
+    </PreBuildEvent>
+    <PreBuildEvent>
+      <Message>build dj3d parser</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>pushd . 
+cd $(DJ3D_SRC)/schema 
+set PATH=%PATH%;$(FLEX_BISON_BIN)
+$(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
+$(Flex) dj3d.l
 popd </Command>
     </PreBuildEvent>
     <PreBuildEvent>
@@ -81,7 +147,7 @@ popd </Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/BISON_FLEX/win32/include;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -93,9 +159,39 @@ popd </Command>
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
-cd ../../../source/schema 
-bison --defines=y.tab.h dj3d.y -o y.tab.c
-flex dj3d.l
+cd $(DJ3D_SRC)/schema 
+set PATH=%PATH%;$(FLEX_BISON_BIN)
+$(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
+$(Flex) dj3d.l
+popd </Command>
+      <Message>build dj3d parser</Message>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>pushd . 
+cd $(DJ3D_SRC)/schema 
+set PATH=%PATH%;$(FLEX_BISON_BIN)
+$(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
+$(Flex) dj3d.l
 popd </Command>
       <Message>build dj3d parser</Message>
     </PreBuildEvent>

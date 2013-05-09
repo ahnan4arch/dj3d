@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <DJ3D_BASE>$(ProjectDir)..\..\..</DJ3D_BASE>
+    <DJ3D_SRC>$(DJ3D_BASE)\source</DJ3D_SRC>
+    <DJ3D_3PBASE>$(DJ3D_BASE)\thirdParty</DJ3D_3PBASE>
+    <FLEX_BISON_BASE>$(DJ3D_3PBASE)\BISON_FLEX\GnuWin32</FLEX_BISON_BASE>
+    <FLEX_BISON_BIN>$(FLEX_BISON_BASE)\bin</FLEX_BISON_BIN>
+    <Flex>$(FLEX_BISON_BIN)\flex.exe</Flex>
+    <Bison>$(FLEX_BISON_BIN)\bison.exe</Bison>
+    <FLEX_BISON_LIB>$(FLEX_BISON_BASE)\lib</FLEX_BISON_LIB>
+    <FLEX_BISON_INC>$(FLEX_BISON_BASE)\include</FLEX_BISON_INC>
+    <JPEG_SRC>$(DJ3D_3PBASE)\JPEG\source</JPEG_SRC>
+    <ZLIB_SRC>$(DJ3D_3PBASE)\ZLIB\source</ZLIB_SRC>
+    <ZIP_SRC>$(ZLIB_SRC)\minizip</ZIP_SRC>
+    <PNG_SRC>$(DJ3D_3PBASE)\PNG\source</PNG_SRC>
+    <LUA_SRC>$(DJ3D_3PBASE)\LUA\source</LUA_SRC>
+    <GLUT_DIR>$(DJ3D_3PBASE)\GLUT\win32\glut-3.7.6-bin</GLUT_DIR>
+    <GLEW_BASE>$(DJ3D_3PBASE)\GLEW\$(Platform)\glew-1.6.0</GLEW_BASE>
+    <GLEW_INC>$(GLEW_BASE)\include</GLEW_INC>
+    <GLEW_LIB>$(GLEW_BASE)\lib</GLEW_LIB>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="DJ3D_BASE">
+      <Value>$(DJ3D_BASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="DJ3D_SRC">
+      <Value>$(DJ3D_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="DJ3D_3PBASE">
+      <Value>$(DJ3D_3PBASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FLEX_BISON_BASE">
+      <Value>$(FLEX_BISON_BASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FLEX_BISON_BIN">
+      <Value>$(FLEX_BISON_BIN)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Flex">
+      <Value>$(Flex)</Value>
+    </BuildMacro>
+    <BuildMacro Include="Bison">
+      <Value>$(Bison)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FLEX_BISON_LIB">
+      <Value>$(FLEX_BISON_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FLEX_BISON_INC">
+      <Value>$(FLEX_BISON_INC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="JPEG_SRC">
+      <Value>$(JPEG_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ZLIB_SRC">
+      <Value>$(ZLIB_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ZIP_SRC">
+      <Value>$(ZIP_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PNG_SRC">
+      <Value>$(PNG_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LUA_SRC">
+      <Value>$(LUA_SRC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLUT_DIR">
+      <Value>$(GLUT_DIR)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_BASE">
+      <Value>$(GLEW_BASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_INC">
+      <Value>$(GLEW_INC)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_LIB">
+      <Value>$(GLEW_LIB)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

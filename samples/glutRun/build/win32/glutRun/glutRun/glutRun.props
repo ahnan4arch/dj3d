@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <DJ3DLIB_BASE>$(ProjectDir)..\..\..\..\..\..</DJ3DLIB_BASE>
+    <GLUTRUN_BASE>$(ProjectDir)..\..\..\..</GLUTRUN_BASE>
+    <GLUT_LIB>$(DJ3DLIB_BASE)\thirdParty\GLUT\win32\glut-3.7.6-bin</GLUT_LIB>
+    <GLEW_LIB>$(DJ3DLIB_BASE)\thirdParty\GLEW\$(Platform)\glew-1.6.0\lib</GLEW_LIB>
+    <FLEX_BISON_LIB>$(DJ3DLIB_BASE)\thirdParty\BISON_FLEX\GnuWin32\lib</FLEX_BISON_LIB>
+    <GLEW_DLL>$(DJ3DLIB_BASE)\thirdParty\GLEW\$(Platform)\glew-1.6.0\bin</GLEW_DLL>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemDefinitionGroup />
+  <ItemGroup>
+    <BuildMacro Include="DJ3DLIB_BASE">
+      <Value>$(DJ3DLIB_BASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLUTRUN_BASE">
+      <Value>$(GLUTRUN_BASE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLUT_LIB">
+      <Value>$(GLUT_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_LIB">
+      <Value>$(GLEW_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="FLEX_BISON_LIB">
+      <Value>$(FLEX_BISON_LIB)</Value>
+    </BuildMacro>
+    <BuildMacro Include="GLEW_DLL">
+      <Value>$(GLEW_DLL)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -11,6 +11,7 @@
 #include "core/scene.h"
 #include "utility/utility.h"
 #include <Windows.h>
+#include <tchar.h>
 
 typedef dj3d::Matrix _Mat;
 
@@ -76,6 +77,14 @@ public:
 int main( int argc, char * argv[] )
 {
     using namespace std;
+	TCHAR szPath[MAX_PATH + 1];
+	::GetCurrentDirectory(MAX_PATH, szPath);
+#ifdef _DEBUG
+	_tcscat(szPath, _T("\\..\\Debug"));
+#else
+	_tcscat(szPath, _T("\\..\\Release"));
+#endif
+	::SetCurrentDirectory(szPath);
 
     dj3d::Routine theApp( argc, argv );
     
