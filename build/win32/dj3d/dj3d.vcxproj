@@ -69,7 +69,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <IncludePath>$(IncludePath);C:\cygwin\usr\include</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -89,6 +89,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -118,6 +119,9 @@ popd </Command>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/GnuWin32/include;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip;../../../thirdParty/GLEW/win32/glew-1.7.0/include</AdditionalIncludeDirectories>
+>>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
       <DisableSpecificWarnings>4996;4290;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -128,10 +132,16 @@ popd </Command>
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
+<<<<<<< HEAD
 cd $(DJ3D_SRC)/schema 
 set PATH=%PATH%;$(FLEX_BISON_BIN)
 $(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
 $(Flex) dj3d.l
+=======
+cd ..\..\..\source\schema 
+..\..\thirdParty\GnuWin32\bin\bison.exe --defines=y.tab.h dj3d.y -o y.tab.c
+..\..\thirdParty\GnuWin32\bin\flex.exe dj3d.l
+>>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
 popd </Command>
     </PreBuildEvent>
     <PreBuildEvent>
@@ -147,6 +157,7 @@ popd </Command>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+<<<<<<< HEAD
       <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
@@ -177,6 +188,9 @@ popd </Command>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DJ3D_EXPORTS;_CRT_SECURE_NO_WARNINGS;GLUT_BUILDING_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(DJ3D_SRC);$(GLEW_INC);$(GLUT_DIR);$(FLEX_BISON_INC);$(JPEG_SRC);$(LUA_SRC);$(PNG_SRC);$(ZLIB_SRC);$(ZIP_SRC)</AdditionalIncludeDirectories>
+=======
+      <AdditionalIncludeDirectories>../../../source;../../../thirdParty/GnuWin32/include;../../../thirdParty/JPEG/source;../../../thirdParty/LUA/win32/include;../../../thirdParty/PNG/source;../../../thirdParty/ZLIB/source;../../../thirdParty/ZLIB/source/minizip;../../../thirdParty/GLEW/win32/glew-1.7.0/include</AdditionalIncludeDirectories>
+>>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
       <DisableSpecificWarnings>4996;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
@@ -188,10 +202,16 @@ popd </Command>
     </Link>
     <PreBuildEvent>
       <Command>pushd . 
+<<<<<<< HEAD
 cd $(DJ3D_SRC)/schema 
 set PATH=%PATH%;$(FLEX_BISON_BIN)
 $(Bison) --defines=y.tab.h dj3d.y -o y.tab.c
 $(Flex) dj3d.l
+=======
+cd ..\..\..\source\schema 
+..\..\thirdParty\GnuWin32\bin\bison.exe --defines=y.tab.h dj3d.y -o y.tab.c
+..\..\thirdParty\GnuWin32\bin\flex.exe dj3d.l
+>>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
 popd </Command>
       <Message>build dj3d parser</Message>
     </PreBuildEvent>

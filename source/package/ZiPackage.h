@@ -37,7 +37,11 @@ namespace dj3d
         bool FindFileInZip(const std::string& strFileName);
         bool OpenFileInZip(void);
         bool ReadBulk(MemoryBlock& blk, size_t& validLength);
+<<<<<<< HEAD
 		bool ReadBulk(MemoryBlock& blk);
+=======
+        bool ReadBulk(MemoryBlock& blk );
+>>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
         bool CloseFileInZip(void);
         void Rewind(void);
         virtual ~UnziPackage(void);
