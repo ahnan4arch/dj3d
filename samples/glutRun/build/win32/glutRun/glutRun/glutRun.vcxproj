@@ -60,11 +60,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>glew32.lib;opengl32.lib;glu32.lib;glut32.lib;libfl.a;liby.a;%(AdditionalDependencies)</AdditionalDependencies>
       <IgnoreSpecificDefaultLibraries>LIBCMTD;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-<<<<<<< HEAD
       <AdditionalLibraryDirectories>$(GLEW_LIB);$(GLUT_LIB);$(FLEX_BISON_LIB);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-=======
-      <AdditionalLibraryDirectories>..\..\..\..\..\..\thirdParty\GLEW\win32\glew-1.7.0\lib;..\..\..\..\..\..\thirdParty\GnuWin32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
->>>>>>> 337f6159b6182c037a422dc62888a41531d5c7c0
     </Link>
     <PostBuildEvent>
       <Command>copy /Y ..\..\..\..\resource\images\TangWei.jpg "$(OutDir)TangWei.jpg"
