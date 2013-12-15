@@ -207,8 +207,9 @@ namespace dj3d
         
         if ( model->onLoad(*this) )
         {
-            dj3d::ModelId _id = model->modelId();
-            m_models.insert( make_pair<ModelId, Model*>( _id, model.release() ) );
+            ModelId _id = model->modelId();
+			m_models[_id] = model.release();
+            // m_models.insert( make_pair<ModelId, Model*>( _id, model.release() ) );
             return true;
         }
         else

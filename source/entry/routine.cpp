@@ -275,7 +275,8 @@ namespace dj3d
 
         if ( pModel->onLoad(*pScene) )
         {
-            pScene->m_models.insert( make_pair<ModelId,Model*>(pModel->modelId(), pModel));
+            // pScene->m_models.insert( make_pair<ModelId,Model*>(pModel->modelId(), pModel));
+			pScene->m_models[pModel->modelId()] = pModel;
         }
         else
         {
